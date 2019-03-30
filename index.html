@@ -49,8 +49,8 @@
     <div class="container">
       <section class="section customize">
         <div class="item">
-          <div class="title">Pick a shape</div>
-          <div class="shape__list">
+          <div class="title">Pick a shape<div class="current-value shape"></div></div>
+          <div class="shape__list pick__list">
             <input id="round" type="radio" name="shape" value="round" checked />
             <label for="round" class="shape circle"></label>
 
@@ -62,12 +62,12 @@
           </div>
         </div>
         <div class="item">
-          <div class="title">Pick a viewer color</div>
-          <div class="color__list" id="color-viewer"></div>
+          <div class="title">Pick a viewer color<div class="current-value color viewer circle"></div></div>
+          <div class="color__list pick__list" id="color-viewer"></div>
         </div>
         <div class="item">
-          <div class="title">Pick an editor color</div>
-          <div class="color__list" id="color-editor"></div>
+          <div class="title">Pick an editor color<div class="current-value color editor circle"></div></div>
+          <div class="color__list pick__list" id="color-editor"></div>
         </div>
       </section>
 

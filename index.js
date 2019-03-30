@@ -83,3 +83,21 @@ updateChatSDK({
   viewerColor: defaultViewerColor,
   shape: "round"
 });
+
+var currentValues = document.querySelectorAll(".current-value");
+currentValues.forEach(el => el.addEventListener("click", showOptions));
+
+function closest(el, className) {
+  while ((el = el.parentElement) && !el.classList.contains(className));
+  return el;
+}
+
+function _toggleClass(el, className) {
+  el.classList.toggle(className);
+}
+
+function showOptions(e) {
+  const el = e.target;
+  const item = closest(el, "item");
+  _toggleClass(item.querySelector(".pick__list"), "show");
+}
