@@ -252,6 +252,7 @@ a {
     position: absolute;
     top: 100%;
     z-index: 131231;
+    padding: 4px 0;
   }
 
   .item .shape__list {
@@ -284,6 +285,10 @@ a {
   .title {
     font-size: 16px;
   }
+
+  .title span {
+    min-width: 178px;
+  }
   
   .item {
     flex: 0 0 100%;
@@ -298,4 +303,68 @@ a {
     flex: 0 0 100%;
     padding-left: 15px;
   }
+
+  .item .pick__list {
+    left: 20%;
+  }
+
+  .chat {
+    height: 300px;
+  }
+
+  .share {
+    padding: 20px 0 10px;
+  }
+
+  .share img {
+    height: 90px;
+    width: 90px;
+  }
+
+}
+
+@media (max-width: 330px) {
+  .title span {
+    min-width: 144px;
+  }
+
+  .ribbon img {
+    height: 110px;
+    width: 110px;
+  }
+  
+  .customize {
+    max-width: calc(100% - 110px);
+  }
+
+  .item .pick__list {
+    right: 0px;
+  }
+}
+
+@media all and (max-height: 700px) {
+  .shape {
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+  }
+
+  .color {
+    height: 34px;
+    width: 34px;
+  }
+
+  .color__list {
+    display: flex;
+    width: 210px;
+    min-height: 160px;
+  }
+
+  .title {
+    padding-bottom: 4px;
+  }
+
+  .title:first-child {
+    padding-top: 0;
+  }  
 }
