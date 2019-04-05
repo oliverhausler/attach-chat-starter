@@ -5,7 +5,7 @@ var createElement = function(html) {
 };
 
 var ColorPicker = function({ id, defaultValue, colors, onChange }) {
-  var list = document.querySelector("#" + id);
+  var listEl = document.querySelector("#" + id);
   colors.forEach(function(color) {
     var input = createElement(
       '<input id="' +
@@ -23,14 +23,14 @@ var ColorPicker = function({ id, defaultValue, colors, onChange }) {
       '<label for="' +
         color +
         id +
-        '" class="color round" style="background:' +
+        '" class="color circle" style="background:' +
         color +
         ';"></label>'
     );
-    list.appendChild(input);
-    list.appendChild(label);
+    listEl.appendChild(input);
+    listEl.appendChild(label);
   });
-  list.addEventListener("click", function(e) {
+  listEl.addEventListener("click", function(e) {
     onChange(e.target.value);
   });
 };
