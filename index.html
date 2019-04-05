@@ -2,86 +2,121 @@
 <!-- Setting up chat -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Chat Starter – ATTACH</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://assets.attach.live/icon2/chat-starter/favicon.ico"
-      sizes="32x32" type="image/x-icon" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
-    <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="color-picker.js" defer></script>
+	<head>
+		<title>Chat Starter – ATTACH</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="icon"
+			href="https://assets.attach.live/icon2/chat-starter/favicon.ico"
+			sizes="32x32"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
+		<link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="color-picker.js" defer></script>
 
-    <!-- Set up ATTACH for your website: https://documentation.attach.live/properties -->
-    <!-- Use meta tags to define static properties. -->
-    <script src="https://dev-video.attach.live/v1" defer></script>
+		<!-- Set up ATTACH for your website: https://documentation.attach.live/properties -->
+		<!-- Use meta tags to define static properties. -->
+		<script src="https://dev-video.attach.live/v1" defer></script>
 
-    <!-- The API key is only valid in the original repo. To prevent video and chat from timing out early,
-    get your own free API key at https://platform.attach.live -->
-    <meta property="attach:api-key" content="dev_web_6qIeGh5DceAIr8t-zf2ElogpEEgx-IDQk" />
+		<!--
+			The API key is only valid in the original repo. To prevent video and chat from timing out early,
+			get your own free API key at https://platform.attach.live
+		-->
+		<meta property="attach:api-key" content="dev_web_6qIeGh5DceAIr8t-zf2ElogpEEgx-IDQk" />
 
-    <!-- The room URL links the room to a CodePen. Open the Pen in a separate browser window to connect. -->
-    <meta property="attach:room:url" content="https://codepen.io/attach/pen/WYNzKE" />
+		<!--
+			The room URL links the room to a CodePen. Open the Pen in a separate browser window to connect.
+		-->
+		<meta property="attach:room:url" content="https://codepen.io/attach/pen/WYNzKE" />
 
-    <!-- Dynamically modify SDK properties. -->
-    <script src="helpers.js" defer></script>
-    <script src="listeners.js" defer></script>
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <a 
-      href="https://github.com/attach-live/attach-chat-starter" 
-      target="_blank" 
-      class="github-corner" 
-      aria-label="View source on GitHub">
-      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 250 250" fill="rgba(0, 0, 0, 0.92)" style="position: absolute; top: 0; right: 0">
-        <path d="M0 0l115 115h15l12 27 108 108V0z" fill="#fff"/>
-        <path class="octo-arm" d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16" style="-webkit-transform-origin: 130px 106px; transform-origin: 130px 106px"/>
-        <path class="octo-body" d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"/>
-      </svg>
-    </a>
-    <div class="container">
-      <section class="section customize">
-        <div class="item">
-          <div class="title"><span>Pick a shape for avatars</span><div class="picker-value shape round"></div></div>
-          <div class="shape__list pick__list">
-            <input id="round" type="radio" name="shape" value="round" checked />
-            <label for="round" class="shape round"></label>
+		<!-- Dynamically modify SDK properties. -->
+		<script src="helpers.js" defer></script>
+		<script src="listeners.js" defer></script>
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<a
+			href="https://github.com/attach-live/attach-chat-starter"
+			target="_blank"
+			class="github-corner"
+			aria-label="View source on GitHub"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="80"
+				height="80"
+				viewBox="0 0 250 250"
+				fill="rgba(0, 0, 0, 0.92)"
+				style="position: absolute; top: 0; right: 0"
+			>
+				<path d="M0 0l115 115h15l12 27 108 108V0z" fill="#fff" />
+				<path
+					class="octo-arm"
+					d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16"
+					style="-webkit-transform-origin: 130px 106px; transform-origin: 130px 106px"
+				/>
+				<path
+					class="octo-body"
+					d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"
+				/>
+			</svg>
+		</a>
+		<div class="container">
+			<section class="section customize">
+				<div class="item">
+					<div class="title">
+						<span>Pick a shape for avatars</span>
+						<div class="picker-value shape round"></div>
+					</div>
+					<div class="shape__list pick__list">
+						<input id="round" type="radio" name="shape" value="round" checked />
+						<label for="round" class="shape round"></label>
 
-            <input id="rounded" type="radio" name="shape" value="rounded" />
-            <label for="rounded" class="shape rounded"></label>
+						<input id="rounded" type="radio" name="shape" value="rounded" />
+						<label for="rounded" class="shape rounded"></label>
 
-            <input id="square" type="radio" name="shape" value="square" />
-            <label for="square" class="shape square"></label>
-          </div>
-        </div>
-        <div class="item">
-          <div class="title"><span>Pick a viewer color</span><div class="picker-value color viewer round"></div></div>
-          <div class="color__list pick__list" id="color-viewer"></div>
-        </div>
-        <div class="item">
-          <div class="title"><span>Pick an editor color</span><div class="picker-value color editor round"></div></div>
-          <div class="color__list pick__list" id="color-editor"></div>
-        </div>
-      </section>
+						<input id="square" type="radio" name="shape" value="square" />
+						<label for="square" class="shape square"></label>
+					</div>
+				</div>
+				<div class="item">
+					<div class="title">
+						<span>Pick a viewer color</span>
+						<div class="picker-value color viewer round"></div>
+					</div>
+					<div class="color__list pick__list" id="color-viewer"></div>
+				</div>
+				<div class="item">
+					<div class="title">
+						<span>Pick an editor color</span>
+						<div class="picker-value color editor round"></div>
+					</div>
+					<div class="color__list pick__list" id="color-editor"></div>
+				</div>
+			</section>
 
-      <!-- Place the ATTACH embed on your page. The 'attach-chat' class tells the SDK where to render your chat.
-      Use the same class name in your own CSS to configure the embed further. -->
-      <main class="attach-chat"></main>
+			<!--
+				Place the ATTACH embed on your page. The 'attach-chat' class tells the SDK where to render your chat.
+				Use the same class name in your own CSS to configure the embed further.
+			-->
+			<main class="attach-chat"></main>
 
-      <section class="section share">
-        <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/attach/pen/WYNzKE">
-          <div class="title">See how it's done</div>
-          <img class="icon__codepen"
-            src="https://assets.attach.live/icons/thirdparty/codepen-icon-white-large.png"
-            alt="codepen"
-          />
-        </a>
-      </section>
-    </div>
-    <p class="disclaimer">
-      Made with love by <a target="_blank" href="https://www.attach.live">ATTACH</a>
-    </p>
-  </body>
+			<section class="section share">
+				<a target="_blank" rel="noopener noreferrer" href="https://codepen.io/attach/pen/WYNzKE">
+					<div class="title">See how it's done</div>
+					<img
+						class="icon__codepen"
+						src="https://assets.attach.live/icons/thirdparty/codepen-icon-white-large.png"
+						alt="codepen"
+					/>
+				</a>
+			</section>
+		</div>
+		<p class="disclaimer">
+			Made with love by <a target="_blank" href="https://www.attach.live">ATTACH</a>
+		</p>
+	</body>
 </html>
