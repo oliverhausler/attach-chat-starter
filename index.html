@@ -34,10 +34,12 @@
       content="https://codepen.io/attach/pen/WYNzKE"
     />
     <!-- Start code for dynamically modifying SDK properties last -->
+    <script src="helpers.js" defer></script>
+    <script src="listeners.js" defer></script>
     <script src="index.js" defer></script>
   </head>
   <body>
-    <a href="https://github.com/attach-live/attach-chat-starter" class="ribbon"
+    <a href="https://github.com/attach-live/attach-chat-starter" class="ribbon" target="_blank"
       ><img
         width="149"
         height="149"
@@ -49,8 +51,8 @@
     <div class="container">
       <section class="section customize">
         <div class="item">
-          <div class="title">Pick a shape</div>
-          <div class="shape__list">
+          <div class="title"><span>Pick a shape for avatars</span><div class="picker-value shape circle"></div></div>
+          <div class="shape__list pick__list">
             <input id="round" type="radio" name="shape" value="round" checked />
             <label for="round" class="shape circle"></label>
 
@@ -62,12 +64,12 @@
           </div>
         </div>
         <div class="item">
-          <div class="title">Pick a viewer color</div>
-          <div class="color__list" id="color-viewer"></div>
+          <div class="title"><span>Pick a viewer color</span><div class="picker-value color viewer circle"></div></div>
+          <div class="color__list pick__list" id="color-viewer"></div>
         </div>
         <div class="item">
-          <div class="title">Pick an editor color</div>
-          <div class="color__list" id="color-editor"></div>
+          <div class="title"><span>Pick an editor color</span><div class="picker-value color editor circle"></div></div>
+          <div class="color__list pick__list" id="color-editor"></div>
         </div>
       </section>
 
@@ -80,12 +82,12 @@
           rel="noopener noreferrer"
           href="https://codepen.io/attach/pen/WYNzKE"
         >
+          <div class="title">See how it's done</div>
           <img
             class="icon__codepen"
-            src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-White-Large.png"
+            src="https://dev-assets.attach.live/icons/thirdparty/codepen-icon-white-large.png"
             alt="codepen"
           />
-          <div class="title">See how it's done</div>
         </a>
       </section>
     </div>
