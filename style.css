@@ -21,14 +21,30 @@ a {
   color: white;
 }
 
-.show {
-  display: flex !important;
+/*
+ * Use the 'attach-chat' class to configure the ATTACH embed with the same name.
+ */
+.attach-chat {
+  width: 100%;
+  height: 400px;
+  flex: 2;
 }
 
-.ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
+@media (min-width: 769px) {
+  .attach-chat {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 590px) {
+  .attach-chat {
+    height: 300px;
+  }
+}
+
+.show {
+  display: flex !important;
 }
 
 .disclaimer {
@@ -177,20 +193,49 @@ a {
   transform: translate(-50%, -50%);
 }
 
-/*
- * Use the 'attach-chat' class to configure the ATTACH embed with the same name.
- */
-.attach-chat {
-  width: 100%;
-  height: 400px;
-  flex: 2;
+/* Github corner styles */
+.github-corner {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.github-corner svg {
+	height: 120px;
+	width: 120px;
+}
+
+.github-corner:hover .octo-arm {
+  animation:octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+  0%,100%{
+    transform:rotate(0)
+  }
+  20%,60%{
+    transform:rotate(-25deg)
+  }
+  40%,80%{
+    transform:rotate(10deg)
+  }
+}
+
+@media (max-width: 1200px) {
+	.github-corner svg {
+		height: 100px;
+		width: 100px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.github-corner svg {
+		height: 80px;
+		width: 80px;
+	}
 }
 
 @media (min-width: 769px) {
-  .attach-chat {
-    height: auto;
-    min-height: 400px;
-  }
 
   .container {
     flex-direction: row;
@@ -200,10 +245,6 @@ a {
 @media (max-width: 768px) {
   body {
     height: auto;
-  }
-
-  .ribbon {
-    z-index: 12312;
   }
 
   .container {
@@ -274,13 +315,13 @@ a {
 }
 
 @media (max-width: 590px) {
-  .attach-chat {
-    height: 300px;
+
+  .github-corner:hover .octo-arm{
+    animation:none
   }
 
-  .ribbon img {
-    height: 120px;
-    width: 120px;
+  .github-corner .octo-arm{
+    animation:octocat-wave 560ms ease-in-out
   }
 
   .customize {
@@ -327,11 +368,6 @@ a {
 @media (max-width: 330px) {
   .title span {
     min-width: 144px;
-  }
-
-  .ribbon img {
-    height: 110px;
-    width: 110px;
   }
 
   .customize {
