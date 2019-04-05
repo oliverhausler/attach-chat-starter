@@ -106,7 +106,7 @@ a {
   display: block;
 }
 
-.shape__list {
+.avatars__list {
   display: flex;
 }
 
@@ -118,11 +118,11 @@ a {
   margin: 0 10px;
 }
 
-.circle {
+.round {
   border-radius: 50%;
 }
 
-.square-rounded {
+.rounded {
   border-radius: 10px;
 }
 
@@ -155,7 +155,10 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.chat {
+/*
+ * Use the 'attach-chat' class to configure the ATTACH embed with the same name.
+ */
+.attach-chat {
   width: 100%;
   height: 400px;
   flex: 2;
@@ -165,7 +168,7 @@ a {
   .disclaimer {
     text-align: right;
   }
-  .chat {
+  .attach-chat {
     height: auto;
     min-height: 400px;
   }
