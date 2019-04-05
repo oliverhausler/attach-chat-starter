@@ -1,39 +1,30 @@
+<!-- Discover the ATTACH WebRTC platform. Fork and enjoy. https://www.attach.live -->
+<!-- Setting up chat -->
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Chat Starter – ATTACH</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chat Starter – ATTACH</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://yarnpkg.com/en/package/normalize.css"
-    />
+    <link rel="icon" href="https://assets.attach.live/icon2/chat-starter/favicon.ico"
+      sizes="32x32" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
+    <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="https://dev-assets.attach.live/icon2/chat-starter/favicon.ico"
-      sizes="32x32"
-      type="image/x-icon"
-    />
     <script src="color-picker.js" defer></script>
 
     <!-- Set up ATTACH for your website: https://documentation.attach.live/properties -->
+    <!-- Use meta tags to define static properties. -->
     <script src="https://dev-video.attach.live/v1" defer></script>
-    <!-- Define static SDK properties in meta -->
-    <meta property="attach:user:username" content="chatomat" />
-    <meta
-      property="attach:api-key"
-      content="dev_web_6qIeGh5DceAIr8t-zf2ElogpEEgx-IDQk"
-    />
-    <meta
-      property="attach:room:url"
-      content="https://codepen.io/attach/pen/WYNzKE"
-    />
-    <!-- Start code for dynamically modifying SDK properties last -->
+
+    <!-- The API key is only valid in the original repo. To prevent video and chat from timing out early,
+    get your own free API key at https://platform.attach.live -->
+    <meta property="attach:api-key" content="dev_web_6qIeGh5DceAIr8t-zf2ElogpEEgx-IDQk" />
+
+    <!-- The room URL links the room to a CodePen. Open the Pen in a separate browser window to connect. -->
+    <meta property="attach:room:url" content="https://codepen.io/attach/pen/WYNzKE" />
+
+    <!-- Dynamically modify SDK properties. -->
     <script src="helpers.js" defer></script>
     <script src="listeners.js" defer></script>
     <script src="index.js" defer></script>
@@ -73,27 +64,22 @@
         </div>
       </section>
 
-      <!-- Place the ATTACH embed on your website -->
-      <main class="chat attach-chat"></main>
+      <!-- Place the ATTACH embed on your page. The 'attach-chat' class tells the SDK where to render your chat.
+      Use the same class name in your own CSS to configure the embed further. -->
+      <main class="attach-chat"></main>
 
       <section class="section share">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://codepen.io/attach/pen/WYNzKE"
-        >
+        <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/attach/pen/WYNzKE">
           <div class="title">See how it's done</div>
-          <img
-            class="icon__codepen"
-            src="https://dev-assets.attach.live/icons/thirdparty/codepen-icon-white-large.png"
+          <img class="icon__codepen"
+            src="https://assets.attach.live/icons/thirdparty/codepen-icon-white-large.png"
             alt="codepen"
           />
         </a>
       </section>
     </div>
     <p class="disclaimer">
-      Made with love by
-      <a target="_blank" href="https://www.attach.live">ATTACH</a>
+      Made with love by <a target="_blank" href="https://www.attach.live">ATTACH</a>
     </p>
   </body>
 </html>

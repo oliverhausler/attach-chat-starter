@@ -1,8 +1,10 @@
 const shapeList = document.querySelector(".shape__list");
 const pickerValues = document.querySelectorAll(".picker-value");
 
-const defaultEditorColor = "#4D368A";
-const defaultViewerColor = "#9F14C0";
+const avatarBorderRadius = "round";
+const editorBackgroundColor = "#4D368A";
+const viewerBackgroundColor = "#9F14C0";
+
 const colors = [
   "#F23A2F",
   "#D31B5B",
@@ -28,21 +30,21 @@ const colors = [
 
 new ColorPicker({
   id: "color-editor",
-  defaultValue: defaultEditorColor,
+  defaultValue: editorBackgroundColor,
   colors: colors,
   onChange: function(newColor) {
-    updateChatSDK({ editorColor: newColor });
-    updatePicker("editor", newColor);
+    updateChat({ editorBackgroundColor: newColor });
+    updatePicker("editorBackgroundColor", newColor);
   }
 });
 
 new ColorPicker({
   id: "color-viewer",
-  defaultValue: defaultViewerColor,
+  defaultValue: viewerBackgroundColor,
   colors: colors,
   onChange: function(newColor) {
-    updateChatSDK({ viewerColor: newColor });
-    updatePicker("viewer", newColor);
+    updateChat({ viewerBackgroundColor: newColor });
+    updatePicker("viewerBackgroundColor", newColor);
   }
 });
 
@@ -50,24 +52,24 @@ document.addEventListener("click", hideOptions);
 pickerValues.forEach(el => el.addEventListener("click", showOptions));
 shapeList.addEventListener("click", function(e) {
   const shape = e.target.value;
-  updateChatSDK({ shape });
-  updatePicker("shape", shape);
+  updateChat({ shape });
+  updatePicker("avatarBorderRadius", shape);
 });
 
-const updateChatSDK = function({ editorColor, viewerColor, shape }) {
-  if (editorColor) {
-    attachSdk.setProperty("attach:chat:editor-background-color", editorColor);
+const updateChat = function({ avatarBorderRadius, viewerBackgroundColor, editorBackgroundColor }) {
+  if (avatarBorderRadius) {
+    attachSdk.setProperty("attach:participants:avatar-border-radius", avatarBorderRadius);
   }
-  if (viewerColor) {
-    attachSdk.setProperty("attach:chat:viewer-background-color", viewerColor);
+  if (viewerBackgroundColor) {
+    attachSdk.setProperty("attach:chat:viewer-background-color", viewerBackgroundColor);
   }
-  if (shape) {
-    attachSdk.setProperty("attach:participants:avatar-border-radius", shape);
+  if (editorBackgroundColor) {
+    attachSdk.setProperty("attach:chat:editor-background-color", editorBackgroundColor);
   }
 };
 
-updateChatSDK({
-  editorColor: defaultEditorColor,
-  viewerColor: defaultViewerColor,
-  shape: "round"
+updateChat({
+  editorBackgroundColor: editorBackgroundColor,
+  viewerBackgroundColor: viewerBackgroundColor,
+  shape: avatarBorderRadius
 });

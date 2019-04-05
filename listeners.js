@@ -25,18 +25,19 @@ function hideOptions(e) {
 
 function updatePicker(type, value) {
   switch (type) {
-    case "editor":
+    case "editorBackgroundColor":
       const editor = document.querySelector(".picker-value.editor");
       editor.style.background = value;
       hideOption(editor);
       break;
-    case "viewer":
+    case "viewerBackgroundColor":
       const viewer = document.querySelector(".picker-value.viewer");
       viewer.style.background = value;
       hideOption(viewer);
       break;
-    case "shape":
+    case "avatarBorderRadius":
       updateShapePicker(value);
+      break;
   }
 }
 

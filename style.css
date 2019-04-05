@@ -45,7 +45,7 @@ a {
 .container {
   margin: 0 auto;
   height: calc(100vh - 40px);
-  padding-top: 30px; 
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -177,18 +177,21 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.chat {
+/*
+ * Use the 'attach-chat' class to configure the ATTACH embed with the same name.
+ */
+.attach-chat {
   width: 100%;
   height: 400px;
   flex: 2;
 }
 
 @media (min-width: 769px) {
-
-  .chat {
+  .attach-chat {
     height: auto;
     min-height: 400px;
   }
+
   .container {
     flex-direction: row;
   }
@@ -198,7 +201,7 @@ a {
   body {
     height: auto;
   }
-  
+
   .ribbon {
     z-index: 12312;
   }
@@ -265,17 +268,21 @@ a {
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.89);  
+    background-color: rgba(0, 0, 0, 0.89);
     z-index: -1;
   }
 }
 
 @media (max-width: 590px) {
+  .attach-chat {
+    height: 300px;
+  }
+
   .ribbon img {
     height: 120px;
     width: 120px;
   }
-  
+
   .customize {
     max-width: calc(100% - 120px);
   }
@@ -287,7 +294,7 @@ a {
   .title span {
     min-width: 178px;
   }
-  
+
   .item {
     flex: 0 0 100%;
     padding-left: 15px;
@@ -304,10 +311,6 @@ a {
 
   .item .pick__list {
     left: 20%;
-  }
-
-  .chat {
-    height: 300px;
   }
 
   .share {
@@ -330,7 +333,7 @@ a {
     height: 110px;
     width: 110px;
   }
-  
+
   .customize {
     max-width: calc(100% - 110px);
   }
