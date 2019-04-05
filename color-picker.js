@@ -23,7 +23,7 @@ var ColorPicker = function({ id, defaultValue, colors, onChange }) {
       '<label for="' +
         color +
         id +
-        '" class="color circle" style="background:' +
+        '" class="color round" style="background:' +
         color +
         ';"></label>'
     );

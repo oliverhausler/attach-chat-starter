@@ -23,32 +23,14 @@ function hideOptions(e) {
   });
 }
 
-function updatePicker(type, value) {
-  switch (type) {
-    case "editorBackgroundColor":
-      const editor = document.querySelector(".picker-value.editor");
-      editor.style.background = value;
-      hideOption(editor);
-      break;
-    case "viewerBackgroundColor":
-      const viewer = document.querySelector(".picker-value.viewer");
-      viewer.style.background = value;
-      hideOption(viewer);
-      break;
-    case "avatarBorderRadius":
-      updateShapePicker(value);
-      break;
-  }
+function updateColorPicker(type, value) {
+  const selector = document.querySelector(".picker-value" + "." + type);
+  selector.style.background = value;
+  hideOption(selector);
 }
 
-function updateShapePicker(prop) {
+function updateShapePicker(value) {
   const shape = document.querySelector(".picker-value.shape");
-  const values = {
-    round: "circle",
-    rounded: "square-rounded",
-    square: "square"
-  };
-
-  shape.className = "picker-value shape " + values[prop];
+  shape.className = "picker-value shape " + value;
   hideOption(shape);
 }

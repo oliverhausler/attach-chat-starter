@@ -148,11 +148,11 @@ a {
   margin: 0 10px;
 }
 
-.circle {
+.round {
   border-radius: 50%;
 }
 
-.square-rounded {
+.rounded {
   border-radius: 10px;
 }
 

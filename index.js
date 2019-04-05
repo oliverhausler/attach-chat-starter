@@ -28,13 +28,25 @@ const colors = [
   "#F95A10"
 ];
 
+function setAvatarBorderRadius(shape) {
+  attachSdk.setProperty("attach:participants:avatar-border-radius", shape);
+}
+
+function setViewerBackgroundColor(color) {
+  attachSdk.setProperty("attach:chat:viewer-background-color", color);
+}
+
+function setEditorBackgroundColor(color) {
+  attachSdk.setProperty("attach:chat:editor-background-color", color);
+}
+
 new ColorPicker({
   id: "color-editor",
   defaultValue: editorBackgroundColor,
   colors: colors,
   onChange: function(newColor) {
-    updateChat({ editorBackgroundColor: newColor });
-    updatePicker("editorBackgroundColor", newColor);
+    setEditorBackgroundColor(newColor);
+    updateColorPicker("editor", newColor);
   }
 });
 
@@ -43,8 +55,8 @@ new ColorPicker({
   defaultValue: viewerBackgroundColor,
   colors: colors,
   onChange: function(newColor) {
-    updateChat({ viewerBackgroundColor: newColor });
-    updatePicker("viewerBackgroundColor", newColor);
+    setViewerBackgroundColor(newColor);
+    updateColorPicker("viewer", newColor);
   }
 });
 
@@ -52,24 +64,14 @@ document.addEventListener("click", hideOptions);
 pickerValues.forEach(el => el.addEventListener("click", showOptions));
 shapeList.addEventListener("click", function(e) {
   const shape = e.target.value;
-  updateChat({ shape });
-  updatePicker("avatarBorderRadius", shape);
+  setAvatarBorderRadius(shape);
+  updateShapePicker(shape);
 });
 
-const updateChat = function({ avatarBorderRadius, viewerBackgroundColor, editorBackgroundColor }) {
-  if (avatarBorderRadius) {
-    attachSdk.setProperty("attach:participants:avatar-border-radius", avatarBorderRadius);
-  }
-  if (viewerBackgroundColor) {
-    attachSdk.setProperty("attach:chat:viewer-background-color", viewerBackgroundColor);
-  }
-  if (editorBackgroundColor) {
-    attachSdk.setProperty("attach:chat:editor-background-color", editorBackgroundColor);
-  }
-};
-
-updateChat({
-  editorBackgroundColor: editorBackgroundColor,
-  viewerBackgroundColor: viewerBackgroundColor,
-  shape: avatarBorderRadius
+// Set initial values
+// Pass multiple properties at once.
+attachSdk.setProperties({
+  "attach:chat:viewer-background-color": viewerBackgroundColor,
+  "attach:chat:editor-background-color": editorBackgroundColor,
+  "attach:participants:avatar-border-radius": avatarBorderRadius
 });
